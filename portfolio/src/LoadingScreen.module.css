@@ -1,0 +1,232 @@
+.loadingContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Arial Black", Arial, sans-serif;
+    overflow: hidden;
+    z-index: 10000;
+}
+
+/* MAIN CONTENT */
+.loadingContent {
+    text-align: center;
+    max-width: 900px;
+    padding: 40px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* TYPEWRITER CONTAINER */
+.typewriterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* MESSAGE LINES */
+.messageLine1 {
+    font-size: 8rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 0.8;
+    min-height: 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.messageLine2 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #ff0000;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BLINKING CURSOR */
+.cursor {
+    color: inherit;
+    animation: blink 1.2s infinite;
+    margin-left: 4px;
+    display: inline-block;
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* COMPLETION INDICATOR */
+.completionIndicator {
+    margin-top: 60px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.completionDot {
+    width: 12px;
+    height: 12px;
+    background: #ff0000;
+    border-radius: 0;
+    margin: 0 auto;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .loadingContent {
+        padding: 30px;
+    }
+
+    .typewriterContainer {
+        gap: 25px;
+    }
+
+    .messageLine1 {
+        font-size: 5rem;
+        min-height: 4rem;
+        letter-spacing: -0.04em;
+    }
+
+    .messageLine2 {
+        font-size: 3rem;
+        min-height: 2.7rem;
+        letter-spacing: -0.01em;
+    }
+
+    .cursor {
+        margin-left: 2px;
+    }
+
+    .completionIndicator {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loadingContent {
+        padding: 20px;
+    }
+
+    .typewriterContainer {
+        gap: 20px;
+    }
+
+    .messageLine1 {
+        font-size: 3.5rem;
+        min-height: 2.8rem;
+        letter-spacing: -0.03em;
+    }
+
+    .messageLine2 {
+        font-size: 2.2rem;
+        min-height: 2rem;
+        letter-spacing: 0;
+    }
+
+    .completionIndicator {
+        margin-top: 40px;
+    }
+
+    .completionDot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* ULTRA SMALL SCREENS */
+@media (max-width: 320px) {
+    .messageLine1 {
+        font-size: 2.8rem;
+        min-height: 2.2rem;
+    }
+
+    .messageLine2 {
+        font-size: 1.8rem;
+        min-height: 1.6rem;
+    }
+}
+
+/* REDUCED MOTION SUPPORT */
+@media (prefers-reduced-motion: reduce) {
+    .cursor {
+        animation: none;
+        opacity: 1;
+    }
+
+    .completionDot {
+        animation: none;
+    }
+
+    .loadingContent {
+        animation: none;
+    }
+
+    .completionIndicator {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* HIGH CONTRAST MODE */
+@media (prefers-contrast: high) {
+    .messageLine2 {
+        color: #ffffff;
+    }
+
+    .completionDot {
+        background: #ffffff;
+    }
+}

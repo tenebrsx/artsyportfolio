@@ -1,0 +1,544 @@
+.ctaContainer {
+    min-height: 100vh;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Arial Black", Arial, sans-serif;
+    padding: 80px 60px;
+}
+
+/* GEOMETRIC ELEMENTS */
+.blackBlock {
+    position: absolute;
+    background: #333333;
+    width: 100%;
+    height: 300px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.yellowTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 200px solid #ffff00;
+    bottom: 200px;
+    left: 100px;
+    z-index: 2;
+}
+
+.redCircle {
+    position: absolute;
+    background: #ff0000;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    top: 150px;
+    right: -50px;
+    z-index: 2;
+}
+
+.whiteAccent {
+    position: absolute;
+    background: #ffffff;
+    width: 100px;
+    height: 100%;
+    bottom: 0;
+    right: 150px;
+    z-index: 1;
+}
+
+/* SECTION NAVIGATION */
+.sectionNumber {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    font-size: 8rem;
+    font-weight: 900;
+    color: #ffffff;
+    z-index: 4;
+    line-height: 0.8;
+}
+
+.sectionLabel {
+    position: absolute;
+    top: 60px;
+    left: 200px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    z-index: 4;
+    writing-mode: vertical-rl;
+    background: #ffff00;
+    padding: 20px 15px;
+}
+
+/* MAIN CONTENT CONTAINER */
+.contentContainer {
+    position: relative;
+    z-index: 4;
+    max-width: 1000px;
+    text-align: center;
+}
+
+/* TYPOGRAPHY HIERARCHY */
+.questionText {
+    font-size: 2.2rem;
+    color: #ffff00;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 40px;
+}
+
+.mainHeading {
+    font-weight: 900;
+    line-height: 0.8;
+    margin: 0 0 60px 0;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.headingLine1 {
+    font-size: 6rem;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.headingLine2 {
+    font-size: 7rem;
+    color: #000000;
+    display: block;
+    background: #ffffff;
+    padding: 30px 50px;
+    margin: 0 auto 20px auto;
+    width: fit-content;
+}
+
+.headingLine3 {
+    font-size: 8rem;
+    color: #ffffff;
+    display: block;
+}
+
+.descriptionText {
+    font-size: 1.4rem;
+    color: #cccccc;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 80px;
+}
+
+/* CTA BUTTON - THE STAR OF THE SHOW */
+.ctaButton {
+    background: #ff0000;
+    border: none;
+    padding: 0;
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 400px;
+    height: 80px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+}
+
+.ctaButton:hover {
+    background: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 0, 0, 0.4);
+}
+
+.ctaButton:hover .buttonText {
+    color: #ff0000;
+}
+
+.ctaButton:hover .buttonArrow {
+    background: #ff0000;
+    color: #ffffff;
+    transform: translateX(10px);
+}
+
+.ctaButton:active {
+    transform: translateY(-2px);
+}
+
+.buttonText {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-left: 40px;
+    transition: color 0.3s ease;
+}
+
+.buttonArrow {
+    background: #000000;
+    color: #ffffff;
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    transition: all 0.3s ease;
+}
+
+.linkText {
+    font-size: 1.2rem;
+    color: #999999;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+/* SUPPORTING ELEMENTS */
+.sideNote {
+    position: absolute;
+    top: 350px;
+    right: 200px;
+    font-size: 1.6rem;
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    writing-mode: vertical-rl;
+    z-index: 4;
+    background: #ffffff;
+    padding: 40px 20px;
+}
+
+.cornerInfo {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    font-size: 1rem;
+    color: #666666;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    z-index: 4;
+}
+
+/* DECORATIVE ELEMENTS */
+.floatingSquare {
+    position: absolute;
+    background: #ffff00;
+    width: 80px;
+    height: 80px;
+    top: 400px;
+    left: 300px;
+    z-index: 3;
+    transform: rotate(45deg);
+}
+
+.diagonalLine {
+    position: absolute;
+    background: #ffffff;
+    width: 6px;
+    height: 300px;
+    bottom: 100px;
+    right: 300px;
+    z-index: 2;
+    transform: rotate(30deg);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1400px) {
+    .contentContainer {
+        max-width: 900px;
+    }
+
+    .headingLine1 {
+        font-size: 5rem;
+    }
+
+    .headingLine2 {
+        font-size: 6rem;
+        padding: 25px 40px;
+    }
+
+    .headingLine3 {
+        font-size: 7rem;
+    }
+
+    .ctaButton {
+        min-width: 350px;
+        height: 70px;
+    }
+
+    .buttonText {
+        font-size: 1.8rem;
+        padding-left: 35px;
+    }
+
+    .buttonArrow {
+        width: 70px;
+        font-size: 1.8rem;
+    }
+
+    .redCircle {
+        width: 200px;
+        height: 200px;
+        right: -40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ctaContainer {
+        padding: 60px 40px;
+    }
+
+    .headingLine1 {
+        font-size: 4rem;
+    }
+
+    .headingLine2 {
+        font-size: 5rem;
+        padding: 20px 35px;
+    }
+
+    .headingLine3 {
+        font-size: 6rem;
+    }
+
+    .questionText {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .descriptionText {
+        font-size: 1.2rem;
+        margin-bottom: 60px;
+    }
+
+    .ctaButton {
+        min-width: 300px;
+        height: 60px;
+    }
+
+    .buttonText {
+        font-size: 1.5rem;
+        padding-left: 30px;
+    }
+
+    .buttonArrow {
+        width: 60px;
+        font-size: 1.5rem;
+    }
+
+    .yellowTriangle {
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 150px solid #ffff00;
+        left: 80px;
+    }
+
+    .whiteAccent {
+        width: 80px;
+        right: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ctaContainer {
+        padding: 40px 30px;
+    }
+
+    .sectionNumber {
+        font-size: 5rem;
+        top: 40px;
+        left: 40px;
+    }
+
+    .sectionLabel {
+        font-size: 1.4rem;
+        left: 140px;
+        padding: 15px 12px;
+    }
+
+    .headingLine1 {
+        font-size: 3rem;
+    }
+
+    .headingLine2 {
+        font-size: 4rem;
+        padding: 15px 25px;
+    }
+
+    .headingLine3 {
+        font-size: 5rem;
+    }
+
+    .questionText {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .descriptionText {
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+    }
+
+    .ctaButton {
+        min-width: 280px;
+        height: 60px;
+        margin-bottom: 30px;
+    }
+
+    .buttonText {
+        font-size: 1.3rem;
+        padding-left: 25px;
+    }
+
+    .buttonArrow {
+        width: 60px;
+        font-size: 1.3rem;
+    }
+
+    .redCircle {
+        width: 150px;
+        height: 150px;
+        right: -30px;
+        top: 120px;
+    }
+
+    .sideNote {
+        font-size: 1.2rem;
+        right: 150px;
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ctaContainer {
+        padding: 30px 20px;
+    }
+
+    .sectionNumber {
+        font-size: 3.5rem;
+        top: 30px;
+        left: 30px;
+    }
+
+    .sectionLabel {
+        font-size: 1rem;
+        left: 100px;
+        padding: 12px 10px;
+    }
+
+    .headingLine1 {
+        font-size: 2.2rem;
+    }
+
+    .headingLine2 {
+        font-size: 2.8rem;
+        padding: 12px 20px;
+    }
+
+    .headingLine3 {
+        font-size: 3.5rem;
+    }
+
+    .questionText {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .descriptionText {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .ctaButton {
+        min-width: 250px;
+        height: 50px;
+        margin-bottom: 25px;
+    }
+
+    .buttonText {
+        font-size: 1.1rem;
+        padding-left: 20px;
+    }
+
+    .buttonArrow {
+        width: 50px;
+        font-size: 1.1rem;
+    }
+
+    .linkText {
+        font-size: 1rem;
+    }
+
+    .blackBlock {
+        height: 200px;
+    }
+
+    .yellowTriangle {
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        border-bottom: 90px solid #ffff00;
+        left: 50px;
+        bottom: 150px;
+    }
+
+    .redCircle {
+        width: 100px;
+        height: 100px;
+        right: -20px;
+        top: 100px;
+    }
+
+    .whiteAccent {
+        width: 50px;
+        right: 80px;
+    }
+
+    .sideNote {
+        display: none;
+    }
+
+    .floatingSquare {
+        width: 50px;
+        height: 50px;
+        left: 150px;
+        top: 250px;
+    }
+
+    .diagonalLine {
+        width: 4px;
+        height: 200px;
+        right: 200px;
+        bottom: 80px;
+    }
+}
+
+/* ACCESSIBILITY */
+.ctaButton:focus {
+    outline: 3px solid #ffff00;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ctaButton,
+    .buttonText,
+    .buttonArrow {
+        transition: none;
+    }
+}

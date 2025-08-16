@@ -1,0 +1,504 @@
+.favoriteContainer {
+    min-height: 100vh;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: "Arial Black", Arial, sans-serif;
+    padding: 80px 60px;
+}
+
+/* GEOMETRIC ELEMENTS - TWIN PEAKS INSPIRED */
+.blueBlock {
+    position: absolute;
+    background: #0033ff;
+    width: 100%;
+    height: 200px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.redTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 200px solid #ff0000;
+    top: 300px;
+    right: 100px;
+    z-index: 2;
+}
+
+.blackSquare {
+    position: absolute;
+    background: #000000;
+    width: 180px;
+    height: 180px;
+    bottom: 150px;
+    left: 150px;
+    z-index: 2;
+}
+
+.whiteCircle {
+    position: absolute;
+    background: #ffffff;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    top: 450px;
+    left: 80px;
+    z-index: 3;
+}
+
+/* SECTION NAVIGATION */
+.sectionNumber {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    font-size: 8rem;
+    font-weight: 900;
+    color: #ffffff;
+    z-index: 4;
+    line-height: 0.8;
+}
+
+.sectionLabel {
+    position: absolute;
+    top: 60px;
+    left: 200px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    z-index: 4;
+    writing-mode: vertical-rl;
+    background: #ffffff;
+    padding: 20px 15px;
+}
+
+/* MAIN CONTENT CONTAINER */
+.contentContainer {
+    position: relative;
+    z-index: 4;
+    max-width: 1000px;
+    margin-left: 350px;
+    margin-top: 120px;
+}
+
+/* DISCLAIMER STYLING */
+.disclaimer {
+    margin-bottom: 40px;
+}
+
+.disclaimerText {
+    font-size: 1.4rem;
+    color: #ff0000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    background: #ffffff;
+    padding: 15px 25px;
+    display: inline-block;
+}
+
+/* TYPOGRAPHY HIERARCHY */
+.mainHeading {
+    font-weight: 900;
+    line-height: 0.7;
+    margin: 0 0 80px 0;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+}
+
+.headingLine1 {
+    font-size: 9rem;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.headingLine2 {
+    font-size: 12rem;
+    color: #000000;
+    display: block;
+    background: #ff0000;
+    padding: 40px 60px;
+    width: fit-content;
+    margin-left: 150px;
+}
+
+/* TEXT CONTENT STYLING */
+.textContent {
+    max-width: 650px;
+}
+
+.mainText {
+    font-size: 1.4rem;
+    color: #cccccc;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.emphasizedQuote {
+    font-size: 3.2rem;
+    color: #ffffff;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 80px 0;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    text-align: center;
+    background: #000000;
+    padding: 50px 40px;
+    border: 4px solid #ffffff;
+}
+
+.highlightText {
+    font-size: 1.8rem;
+    color: #000000;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-weight: 900;
+    line-height: 1.3;
+    margin: 60px 0;
+    background: #ffffff;
+    padding: 40px 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* TECHNICAL GRID */
+.technicalGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 100px;
+    padding: 50px;
+    background: #0033ff;
+}
+
+.techItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.techLabel {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 15px;
+}
+
+.techValue {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 0.8;
+}
+
+/* SUPPORTING ELEMENTS */
+.sideNote {
+    position: absolute;
+    top: 350px;
+    right: 80px;
+    font-size: 1.6rem;
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    writing-mode: vertical-rl;
+    z-index: 4;
+    background: #ffffff;
+    padding: 40px 20px;
+}
+
+.yearLabel {
+    position: absolute;
+    top: 250px;
+    right: 200px;
+    font-size: 2.4rem;
+    color: #ff0000;
+    font-weight: 900;
+    z-index: 4;
+    transform: rotate(-15deg);
+}
+
+.cornerInfo {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    font-size: 1rem;
+    color: #999999;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    z-index: 4;
+}
+
+/* DECORATIVE ELEMENTS */
+.redDot {
+    position: absolute;
+    background: #ff0000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 200px;
+    left: 300px;
+    z-index: 3;
+}
+
+.blackBar {
+    position: absolute;
+    background: #000000;
+    width: 4px;
+    height: 150px;
+    bottom: 100px;
+    right: 250px;
+    z-index: 2;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1400px) {
+    .contentContainer {
+        margin-left: 300px;
+        max-width: 900px;
+    }
+
+    .headingLine1 {
+        font-size: 7rem;
+    }
+
+    .headingLine2 {
+        font-size: 9rem;
+        margin-left: 120px;
+        padding: 35px 50px;
+    }
+
+    .redTriangle {
+        border-left: 120px solid transparent;
+        border-right: 120px solid transparent;
+        border-bottom: 160px solid #ff0000;
+        right: 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .favoriteContainer {
+        padding: 60px 40px;
+    }
+
+    .contentContainer {
+        margin-left: 250px;
+        margin-top: 100px;
+        max-width: calc(100% - 270px);
+    }
+
+    .headingLine1 {
+        font-size: 5.5rem;
+    }
+
+    .headingLine2 {
+        font-size: 7rem;
+        margin-left: 100px;
+        padding: 30px 40px;
+    }
+
+    .emphasizedQuote {
+        font-size: 2.4rem;
+        margin: 60px 0;
+        padding: 40px 30px;
+    }
+
+    .technicalGrid {
+        gap: 30px;
+        padding: 40px;
+        margin-top: 80px;
+    }
+
+    .techValue {
+        font-size: 2.2rem;
+    }
+
+    .blackSquare {
+        width: 140px;
+        height: 140px;
+        left: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .favoriteContainer {
+        padding: 40px 30px;
+    }
+
+    .contentContainer {
+        margin-left: 180px;
+        margin-top: 80px;
+        max-width: calc(100% - 200px);
+    }
+
+    .sectionNumber {
+        font-size: 5rem;
+        top: 40px;
+        left: 40px;
+    }
+
+    .sectionLabel {
+        font-size: 1.4rem;
+        left: 140px;
+        padding: 15px 12px;
+    }
+
+    .headingLine1 {
+        font-size: 4rem;
+    }
+
+    .headingLine2 {
+        font-size: 5rem;
+        margin-left: 80px;
+        padding: 25px 35px;
+    }
+
+    .mainText {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .emphasizedQuote {
+        font-size: 2rem;
+        margin: 50px 0;
+        padding: 35px 25px;
+    }
+
+    .highlightText {
+        font-size: 1.4rem;
+        margin: 40px 0;
+        padding: 30px 35px;
+    }
+
+    .technicalGrid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px;
+        margin-top: 60px;
+    }
+
+    .blueBlock {
+        height: 150px;
+    }
+
+    .redTriangle {
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        border-bottom: 120px solid #ff0000;
+        right: 60px;
+        top: 250px;
+    }
+
+    .sideNote {
+        font-size: 1.2rem;
+        right: 40px;
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .favoriteContainer {
+        padding: 30px 20px;
+    }
+
+    .contentContainer {
+        margin-left: 120px;
+        margin-top: 60px;
+        max-width: calc(100% - 140px);
+    }
+
+    .sectionNumber {
+        font-size: 3.5rem;
+        top: 30px;
+        left: 30px;
+    }
+
+    .sectionLabel {
+        font-size: 1rem;
+        left: 100px;
+        padding: 12px 10px;
+    }
+
+    .disclaimerText {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .headingLine1 {
+        font-size: 2.8rem;
+    }
+
+    .headingLine2 {
+        font-size: 3.5rem;
+        margin-left: 50px;
+        padding: 20px 25px;
+    }
+
+    .mainText {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .emphasizedQuote {
+        font-size: 1.6rem;
+        padding: 25px 20px;
+        margin: 40px 0;
+    }
+
+    .highlightText {
+        font-size: 1.2rem;
+        padding: 25px 30px;
+    }
+
+    .technicalGrid {
+        padding: 25px;
+        margin-top: 50px;
+    }
+
+    .techValue {
+        font-size: 1.8rem;
+    }
+
+    .blackSquare {
+        width: 100px;
+        height: 100px;
+        left: 80px;
+        bottom: 120px;
+    }
+
+    .whiteCircle {
+        width: 80px;
+        height: 80px;
+        left: 50px;
+        top: 350px;
+    }
+
+    .sideNote {
+        display: none;
+    }
+
+    .redTriangle {
+        border-left: 60px solid transparent;
+        border-right: 60px solid transparent;
+        border-bottom: 80px solid #ff0000;
+        right: 40px;
+        top: 200px;
+    }
+}

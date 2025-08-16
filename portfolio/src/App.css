@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+.App {
+    text-align: left;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+code {
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Remove default button and input styles */
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove default link styling */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* SIMPLE BRUTALIST CURSOR */
+* {
+    cursor: none !important;
+}
+
+body {
+    cursor: none;
+}
+
+/* Simple square cursor */
+body::before {
+    content: "";
+    position: fixed;
+    top: var(--cursor-y, 0px);
+    left: var(--cursor-x, 0px);
+    width: 12px;
+    height: 12px;
+    background: #ff0000;
+    border: 2px solid #000000;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+}
+
+/* Cursor hover state for interactive elements */
+body.cursor-hover::before {
+    width: 20px;
+    height: 20px;
+    background: #ffff00;
+    border: 2px solid #000000;
+}
+
+/* Cursor click state */
+body.cursor-click::before {
+    width: 8px;
+    height: 8px;
+    background: #000000;
+    border: 2px solid #ff0000;
+}
+
+/* LYNCH-INSPIRED SCROLL EFFECTS */
+:root {
+    --scroll-progress: 0;
+    --darkness-level: 0;
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 9999;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #000000);
+    transition: width 0.1s ease;
+}
+
+/* Main Content */
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Surface Section - Bright & Clean */
+.surface-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff, #f8f8f8);
+    position: relative;
+}
+
+.hero-container {
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.main-title {
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 900;
+    line-height: 0.8;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+.title-line-1 {
+    display: block;
+    transform: translateX(-20px);
+}
+
+.title-line-2 {
+    display: block;
+    color: #ff0000;
+    transform: translateX(20px);
+}
+
+.title-line-3 {
+    display: block;
+    transform: translateX(-10px);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666666;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+}
+
+.hero-scroll-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: #999999;
+}
+
+.arrow-down {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Geometric Overlay */
+.geometric-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.floating-triangle {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 60px;
+    height: 60px;
+    background: #ff0000;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: center;
+}
+
+.floating-circle {
+    position: absolute;
+    bottom: 30%;
+    left: 15%;
+    width: 80px;
+    height: 80px;
+    background: #ffff00;
+    border-radius: 50%;
+    border: 3px solid #000000;
+}
+
+.floating-square {
+    position: absolute;
+    top: 60%;
+    right: 20%;
+    width: 50px;
+    height: 50px;
+    background: #000000;
+    transform-origin: center;
+}
+
+/* Depth Indicator */
+.depth-indicator {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 1rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    z-index: 9998;
+    border: 1px solid #ff0000;
+}
+
+.depth-text {
+    margin-bottom: 0.5rem;
+}
+
+.depth-level {
+    color: #ffff00;
+    font-weight: bold;
+}
+
+/* Void Section */
+.void-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+
+.void-content {
+    max-width: 600px;
+    padding: 2rem;
+}
+
+.void-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: #ff0000;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.void-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #cccccc;
+}
+
+.void-signature {
+    font-size: 1rem;
+    color: #ffff00;
+    font-style: italic;
+}
+
+/* Progressive Scroll Effects */
+body.surface {
+    background: #ffffff;
+}
+
+body.shadows {
+    background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+}
+
+body.twin-peaks {
+    background: linear-gradient(to bottom, #e0e0e0, #c0c0c0);
+    filter: contrast(1.1);
+}
+
+body.chavon {
+    background: linear-gradient(to bottom, #c0c0c0, #808080);
+    filter: contrast(1.2) saturate(0.9);
+}
+
+body.artistic {
+    background: linear-gradient(to bottom, #808080, #404040);
+    filter: contrast(1.3) saturate(0.8) hue-rotate(10deg);
+}
+
+body.movies {
+    background: linear-gradient(to bottom, #404040, #202020);
+    filter: contrast(1.4) saturate(0.7) hue-rotate(20deg);
+}
+
+body.void {
+    background: #000000;
+    filter: contrast(1.5) saturate(0.5) hue-rotate(30deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .depth-indicator {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .floating-triangle,
+    .floating-circle,
+    .floating-square {
+        width: 40px;
+        height: 40px;
+    }
+}

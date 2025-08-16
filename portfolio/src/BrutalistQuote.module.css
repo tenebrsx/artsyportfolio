@@ -1,0 +1,242 @@
+.brutalistContainer {
+    min-height: 100vh;
+    background: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Arial Black", Arial, sans-serif;
+    padding: 40px;
+}
+
+.redBlock {
+    position: absolute;
+    background: #ff0000;
+    width: 400px;
+    height: 600px;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.blueCircle {
+    position: absolute;
+    background: #0040ff;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    bottom: 100px;
+    left: 600px;
+    z-index: 2;
+}
+
+.quoteContainer {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+}
+
+.mainQuote {
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 0.8;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.line1 {
+    color: #000000;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.line2 {
+    color: #000000;
+    display: block;
+    margin-left: 120px;
+    margin-bottom: 20px;
+}
+
+.line3 {
+    color: #ffffff;
+    display: block;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    background: #ff0000;
+    padding: 20px 40px;
+    width: fit-content;
+}
+
+.line4 {
+    color: #000000;
+    display: block;
+    margin-left: 200px;
+    margin-bottom: 25px;
+}
+
+.line5 {
+    color: #ffffff;
+    display: block;
+    margin-left: 80px;
+    background: #0040ff;
+    padding: 20px 40px;
+    width: fit-content;
+}
+
+.subtitle {
+    font-size: 2.2rem;
+    color: #000000;
+    margin: 80px 0 0 300px;
+    font-weight: 400;
+    max-width: 500px;
+    line-height: 1.1;
+    font-family: "Inter", sans-serif;
+    text-transform: none;
+}
+
+.sideText {
+    position: absolute;
+    top: 100px;
+    right: 60px;
+    font-size: 1.2rem;
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    writing-mode: vertical-rl;
+    z-index: 4;
+}
+
+.cornerText {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    font-size: 1rem;
+    color: #666666;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    z-index: 4;
+}
+
+.blackSquare {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #000000;
+    top: 200px;
+    left: 100px;
+    z-index: 2;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .mainQuote {
+        font-size: 4.5rem;
+    }
+
+    .redBlock {
+        width: 300px;
+        height: 500px;
+    }
+
+    .blueCircle {
+        width: 200px;
+        height: 200px;
+        left: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brutalistContainer {
+        padding: 20px;
+    }
+
+    .mainQuote {
+        font-size: 3rem;
+    }
+
+    .line2 {
+        margin-left: 60px;
+    }
+
+    .line3 {
+        margin-left: 30px;
+        padding: 15px 30px;
+    }
+
+    .line4 {
+        margin-left: 100px;
+    }
+
+    .line5 {
+        margin-left: 40px;
+        padding: 15px 30px;
+    }
+
+    .subtitle {
+        margin: 50px 0 0 150px;
+        font-size: 1.8rem;
+        max-width: 400px;
+    }
+
+    .redBlock {
+        width: 200px;
+        height: 400px;
+    }
+
+    .blueCircle {
+        width: 150px;
+        height: 150px;
+        left: 300px;
+        bottom: 80px;
+    }
+
+    .sideText {
+        right: 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainQuote {
+        font-size: 2.5rem;
+    }
+
+    .line2 {
+        margin-left: 30px;
+    }
+
+    .line3 {
+        margin-left: 15px;
+        padding: 10px 20px;
+    }
+
+    .line4 {
+        margin-left: 50px;
+    }
+
+    .line5 {
+        margin-left: 20px;
+        padding: 10px 20px;
+    }
+
+    .subtitle {
+        margin: 40px 0 0 80px;
+        font-size: 1.5rem;
+        max-width: 300px;
+    }
+
+    .redBlock {
+        width: 150px;
+        height: 300px;
+    }
+
+    .blueCircle {
+        width: 120px;
+        height: 120px;
+        left: 200px;
+    }
+}
