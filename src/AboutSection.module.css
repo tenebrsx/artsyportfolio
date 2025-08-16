@@ -447,7 +447,7 @@
     align-items: center;
     justify-content: center;
 
-    font-family: 'Courier New', monospace;
+    font-family: "Courier New", monospace;
 
     /* Entry animation */
     animation: introEntrance 0.5s var(--ease-mood);
@@ -521,7 +521,7 @@
     display: flex;
     align-items: baseline;
     gap: var(--space-lg);
-    font-family: 'Courier New', monospace;
+    font-family: "Courier New", monospace;
 }
 
 .instructionKey {
@@ -559,8 +559,14 @@
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.3; }
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0.3;
+    }
 }
 
 .lineCount {
@@ -642,8 +648,6 @@
 
 /* ATMOSPHERE LAYER */
 .atmosphereLayer {
-</text>
-
     position: fixed;
     top: 0;
     left: 0;
