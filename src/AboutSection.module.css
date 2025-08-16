@@ -432,8 +432,218 @@
     z-index: var(--z-sections);
 }
 
+/* NAVIGATION INTRO - BRUTALIST STYLE */
+.navigationIntro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Courier New', monospace;
+
+    /* Entry animation */
+    animation: introEntrance 0.5s var(--ease-mood);
+}
+
+@keyframes introEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.introContent {
+    max-width: 600px;
+    width: 90%;
+    text-align: left;
+
+    border: 3px solid #fff;
+    padding: var(--space-2xl);
+    background: #000;
+}
+
+.introHeader {
+    margin-bottom: var(--space-2xl);
+    border-bottom: 2px solid #fff;
+    padding-bottom: var(--space-lg);
+}
+
+.introNumber {
+    font-size: var(--text-4xl);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+}
+
+.introTitle {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.introInstructions {
+    margin-bottom: var(--space-2xl);
+}
+
+.instructionGroup {
+    margin-bottom: var(--space-lg);
+}
+
+.instructionTitle {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+    color: #ccc;
+}
+
+.instructionList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.instructionItem {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-lg);
+    font-family: 'Courier New', monospace;
+}
+
+.instructionKey {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    background: #fff;
+    color: #000;
+    padding: var(--space-xs) var(--space-sm);
+    min-width: 80px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.instructionAction {
+    font-size: var(--text-sm);
+    color: #fff;
+    flex: 1;
+}
+
+.introFooter {
+    border-top: 2px solid #fff;
+    padding-top: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.startPrompt {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+.lineCount {
+    font-size: var(--text-sm);
+    color: #ccc;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Hide other content when showing intro */
+.showingIntro .stickyHeader,
+.showingIntro .stickyContent,
+.showingIntro .atmosphereLayer {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Responsive intro styles */
+@media (max-width: 768px) {
+    .introContent {
+        padding: var(--space-xl);
+        border-width: 2px;
+    }
+
+    .introNumber {
+        font-size: var(--text-3xl);
+    }
+
+    .introTitle {
+        font-size: var(--text-lg);
+    }
+
+    .instructionItem {
+        flex-direction: column;
+        gap: var(--space-xs);
+        align-items: flex-start;
+    }
+
+    .instructionKey {
+        min-width: auto;
+        align-self: flex-start;
+    }
+
+    .introFooter {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .introContent {
+        padding: var(--space-lg);
+        width: 95%;
+    }
+
+    .introHeader {
+        margin-bottom: var(--space-lg);
+    }
+
+    .introNumber {
+        font-size: var(--text-2xl);
+    }
+
+    .instructionKey {
+        font-size: var(--text-xs);
+        padding: 2px var(--space-xs);
+    }
+
+    .instructionAction {
+        font-size: var(--text-xs);
+    }
+
+    .startPrompt {
+        font-size: var(--text-base);
+    }
+}
+
 /* ATMOSPHERE LAYER */
 .atmosphereLayer {
+</text>
+
     position: fixed;
     top: 0;
     left: 0;
