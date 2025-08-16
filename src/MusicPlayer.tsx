@@ -127,7 +127,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ isVisible, onToggle }) => {
         }, 500);
       }
     }
-  }, [currentTrackIndex]);
+  }, [currentTrackIndex, currentTrack.youtubeId, isPlaying]);
 
   // Update volume when changed
   useEffect(() => {

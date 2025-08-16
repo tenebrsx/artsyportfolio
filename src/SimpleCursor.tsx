@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 const SimpleCursor: React.FC = () => {
   useEffect(() => {
     const updateCursorPosition = (e: MouseEvent) => {
-      const cursor = document.querySelector("body::before") as any;
       document.documentElement.style.setProperty(
         "--cursor-x",
         `${e.clientX}px`,
