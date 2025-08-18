@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./FavoriteSection.module.css";
 
 const FavoriteSection: React.FC = () => {
+  const [spoilerRevealed, setSpoilerRevealed] = useState(false);
+
+  const handleSpoilerClick = () => {
+    setSpoilerRevealed(true);
+  };
+
   return (
     <div className={styles.favoriteContainer}>
       {/* GEOMETRIC ELEMENTS */}
@@ -9,6 +15,10 @@ const FavoriteSection: React.FC = () => {
       <div className={styles.redTriangle} />
       <div className={styles.blackSquare} />
       <div className={styles.whiteCircle} />
+      <div className={styles.yellowStripe} />
+      <div className={styles.cyanAccent} />
+      <div className={styles.diagonalLine1} />
+      <div className={styles.diagonalLine2} />
 
       {/* SECTION IDENTIFIER */}
       <div className={styles.sectionNumber}>02</div>
@@ -27,7 +37,32 @@ const FavoriteSection: React.FC = () => {
 
         <div className={styles.textContent}>
           <p className={styles.mainText}>
-            David Lynch's Twin Peaks isn't just television—it's a masterclass in atmospheric storytelling that transcends conventional narrative structures. This surreal mystery series taught me that the most powerful stories live in the spaces between reality and dream.
+            When I first started Twin Peaks, I thought I knew what I was
+            watching. A small-town mystery, quirky characters, coffee, and pie
+            repeated like a ritual. It felt safe, familiar, almost comforting.
+          </p>
+
+          <p className={styles.mainText}>
+            But that comfort was a setup. Lynch built the surface I trusted,
+            then shattered it. What seemed like humour soured into dread. A
+            smile lasted too long, and suddenly it wasn't funny anymore. A
+            hallway stretched wider than it should, and suddenly it wasn't just
+            a hallway. And then came the mirror —{" "}
+            {spoilerRevealed ? (
+              <span>
+                Leland's face splitting open to reveal BOB staring back
+              </span>
+            ) : (
+              <button
+                className={styles.spoilerButton}
+                onClick={handleSpoilerClick}
+                aria-label="Click to reveal Twin Peaks spoiler"
+              >
+                [SPOILER - Click to Reveal]
+              </button>
+            )}
+            . That moment branded itself onto me: horror not as spectacle, but
+            as infection, crawling out of the screen and into my reflection.
           </p>
 
           <div className={styles.emphasizedQuote}>
@@ -35,15 +70,31 @@ const FavoriteSection: React.FC = () => {
           </div>
 
           <p className={styles.mainText}>
-            Lynch creates meaning through mood, through the pregnant pause, through the deliberate discomfort of the unknown. Every frame is composed with the precision of a painter, every sound designed to crawl under your skin and stay there.
+            What hooked me wasn't the darkness itself, but the way it rewired
+            the familiar. A lamp, a silence, the slant of light across a face —
+            everything felt charged, alive, dangerous. For days after that
+            scene, I hesitated in front of my mirrors. Even the most familiar
+            spaces stopped feeling safe. That's what I carry with me most: Agent
+            Cooper's conviction that nothing is wasted. He listens to stray
+            words, dreams, shivers of brightness as if they're all part of the
+            message.
           </p>
 
           <p className={styles.highlightText}>
-            THIS IS THE KIND OF STORYTELLING I WANT TO CREATE—WORK THAT HAUNTS, THAT LINGERS, THAT REFUSES TO BE FORGOTTEN.
+            I DON'T CHASE ONE TONE. IF JOY IS TRUE, I WANT TO CAPTURE JOY. IF
+            DREAD IS GENUINE, I'LL FOLLOW DREAD. WHIMSY AND DREAD CAN COEXIST,
+            COLLIDING AND BLEEDING INTO EACH OTHER.
           </p>
 
           <p className={styles.mainText}>
-            Twin Peaks showed me that cinema can be poetry, that narrative can be impressionistic, and that the most profound truths often come wrapped in mystery. It's not about giving answers—it's about asking the right questions.
+            What lingers with me isn't the murder, or even the mystery — it's
+            the atmosphere that seeps into everything around it. Twin Peaks made
+            me suspicious of the everyday, reverent of the uncanny, attuned to
+            the strangeness humming beneath daily life. And that's what I want
+            my films to be: not windows you peer through from a distance, but
+            rooms you're pulled into without warning. Rooms that trap you, shift
+            the air around you, and leave you wondering — when you walk back out
+            — if the world you thought was safe has already begun to crack.
           </p>
         </div>
 

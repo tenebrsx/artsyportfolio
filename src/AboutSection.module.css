@@ -51,7 +51,7 @@
     position: relative;
     /* Height will be set by the number of poem sections */
     min-height: calc(35 * 100vh);
-    background: var(--background-base);
+    background: white;
 
     /* Smooth mood transitions */
     transition: background-color var(--duration-mood) var(--ease-mood);
@@ -294,79 +294,10 @@
 }
 
 /* Container state when showing intro */
-.showingIntro .stickyHeader,
 .showingIntro .stickyContent,
 .showingIntro .atmosphereLayer {
     opacity: 0;
     pointer-events: none;
-}
-
-/* STICKY HEADER */
-.stickyHeader {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: var(--z-header);
-    padding: var(--space-lg) var(--space-xl);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-
-    /* Performance */
-    will-change: transform;
-    transform: translate3d(0, 0, 0);
-}
-
-.sectionInfo {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-}
-
-.sectionNumber {
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--accent-color);
-    font-variant-numeric: tabular-nums;
-}
-
-.sectionTitle {
-    font-size: var(--text-sm);
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--secondary-text);
-}
-
-.progressContainer {
-    flex: 1;
-    max-width: 200px;
-    height: 2px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 1px;
-    overflow: hidden;
-    margin: 0 var(--space-xl);
-}
-
-.progressBar {
-    height: 100%;
-    background: var(--accent-color);
-    transition: width var(--duration-normal) var(--ease-smooth);
-    transform-origin: left;
-    will-change: width;
-}
-
-.positionInfo {
-    font-size: var(--text-sm);
-    color: var(--tertiary-text);
-    font-weight: 400;
-    font-variant-numeric: tabular-nums;
 }
 
 /* STICKY CONTENT */
@@ -646,366 +577,482 @@
     }
 }
 
-/* ATMOSPHERE LAYER */
+/* ATMOSPHERE LAYER - CLEAN BACKGROUND */
 .atmosphereLayer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     z-index: var(--z-background);
-
     background: transparent;
-    transition: all var(--duration-mood) var(--ease-mood);
-
-    /* Performance */
-    will-change: background;
-    transform: translate3d(0, 0, 0);
 }
 
 /* MOOD STATES */
 
 /* Unsettled */
 .mood_unsettled {
-    background: #f8f8f8;
+    background: white;
 }
 .mood_unsettled .poemText {
-    color: #222;
-}
-.mood_unsettled .atmosphereLayer {
-    background: linear-gradient(
-        45deg,
-        transparent 95%,
-        rgba(200, 200, 200, 0.1) 100%
-    );
+    letter-spacing: 0.01em;
 }
 
 /* Disconnected */
 .mood_disconnected {
-    background: #f5f5f5;
+    background: white;
 }
 .mood_disconnected .poemText {
-    color: #333;
-    letter-spacing: 0.02em;
-}
-.mood_disconnected .atmosphereLayer {
-    background: radial-gradient(
-        circle at 70% 30%,
-        rgba(180, 190, 200, 0.1) 0%,
-        transparent 50%
-    );
+    letter-spacing: 0.05em;
 }
 
 /* Exhausted */
 .mood_exhausted {
-    background: #f2f2f2;
+    background: white;
 }
 .mood_exhausted .poemText {
-    color: #444;
-    font-weight: 400;
-}
-.mood_exhausted .atmosphereLayer {
-    background: linear-gradient(
-        180deg,
-        transparent 70%,
-        rgba(150, 150, 150, 0.1) 100%
-    );
+    line-height: 1.6;
 }
 
 /* Masked */
 .mood_masked {
-    background: #f9f9f9;
+    background: white;
 }
 .mood_masked .poemText {
-    color: #222;
-    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
-}
-.mood_masked .atmosphereLayer {
-    background: radial-gradient(
-        circle at center,
-        rgba(255, 255, 255, 0.2) 0%,
-        transparent 60%
-    );
 }
 
 /* Resistance */
 .mood_resistance {
-    background: #f6f6f6;
+    background: white;
 }
 .mood_resistance .poemText {
-    color: #2a2a2a;
-    font-weight: 550;
-}
-.mood_resistance .atmosphereLayer {
-    background: linear-gradient(
-        135deg,
-        transparent 80%,
-        rgba(200, 150, 150, 0.08) 100%
-    );
+    letter-spacing: -0.01em;
 }
 
 /* Isolated */
 .mood_isolated {
-    background: #f4f4f4;
+    background: white;
 }
 .mood_isolated .poemText {
-    color: #555;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
 }
-.mood_isolated .atmosphereLayer {
-    background: radial-gradient(
-        ellipse at center,
-        transparent 40%,
-        rgba(100, 100, 100, 0.05) 100%
-    );
+
+/* Misunderstood */
+.mood_misunderstood {
+    background: white;
+}
+.mood_misunderstood .poemText {
+    letter-spacing: 0.04em;
 }
 
 /* Awakening */
 .mood_awakening {
-    background: #f7f7f7;
+    background: white;
 }
 .mood_awakening .poemText {
-    color: #111;
-    font-weight: 600;
-}
-.mood_awakening .atmosphereLayer {
-    background: linear-gradient(
-        90deg,
-        transparent 60%,
-        rgba(220, 180, 120, 0.08) 100%
-    );
+    letter-spacing: -0.01em;
 }
 
 /* Hyperaware */
 .mood_hyperaware {
-    background: #f8f8f8;
+    background: white;
 }
 .mood_hyperaware .poemText {
-    color: #111;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-}
-.mood_hyperaware .atmosphereLayer {
-    background: radial-gradient(
-        circle at 30% 70%,
-        rgba(200, 200, 255, 0.1) 0%,
-        transparent 40%
-    );
+    letter-spacing: -0.02em;
+    font-size: calc(var(--text-4xl) * 1.05);
 }
 
 /* Empathetic */
 .mood_empathetic {
-    background: #f9f8f7;
+    background: white;
 }
 .mood_empathetic .poemText {
-    color: #2a2520;
-    font-weight: 400;
-}
-.mood_empathetic .atmosphereLayer {
-    background: radial-gradient(
-        circle at 60% 40%,
-        rgba(220, 200, 180, 0.12) 0%,
-        transparent 50%
-    );
+    line-height: 1.4;
 }
 
 /* Raw */
 .mood_raw {
-    background: #f6f6f6;
+    background: white;
 }
 .mood_raw .poemText {
-    color: #333;
-    font-weight: 400;
-}
-.mood_raw .atmosphereLayer {
-    background: linear-gradient(
-        45deg,
-        rgba(200, 180, 180, 0.08) 0%,
-        transparent 70%
-    );
+    letter-spacing: 0.01em;
 }
 
 /* Vulnerable */
 .mood_vulnerable {
-    background: #f7f6f6;
+    background: white;
 }
 .mood_vulnerable .poemText {
-    color: #444;
-    font-weight: 350;
-}
-.mood_vulnerable .atmosphereLayer {
-    background: radial-gradient(
-        ellipse at 40% 60%,
-        rgba(220, 200, 200, 0.1) 0%,
-        transparent 60%
-    );
+    line-height: 1.5;
 }
 
 /* Trapped */
 .mood_trapped {
-    background: #f3f3f3;
+    background: white;
 }
 .mood_trapped .poemText {
-    color: #555;
-    letter-spacing: -0.02em;
-}
-.mood_trapped .atmosphereLayer {
-    background: linear-gradient(
-        0deg,
-        rgba(150, 150, 150, 0.08) 0%,
-        transparent 40%
-    );
+    letter-spacing: -0.03em;
 }
 
 /* Rebellion */
 .mood_rebellion {
-    background: #f5f5f4;
+    background: white;
 }
 .mood_rebellion .poemText {
-    color: #2a2a2a;
-    font-weight: 600;
-}
-.mood_rebellion .atmosphereLayer {
-    background: linear-gradient(
-        135deg,
-        transparent 70%,
-        rgba(180, 120, 120, 0.1) 100%
-    );
+    letter-spacing: -0.01em;
 }
 
 /* Struggle */
 .mood_struggle {
-    background: #f4f4f4;
+    background: white;
 }
 .mood_struggle .poemText {
-    color: #444;
-}
-.mood_struggle .atmosphereLayer {
-    background: linear-gradient(
-        90deg,
-        rgba(160, 160, 160, 0.06) 0%,
-        transparent 50%
-    );
+    letter-spacing: 0.02em;
 }
 
 /* Defiant */
 .mood_defiant {
-    background: #f6f5f5;
+    background: white;
 }
 .mood_defiant .poemText {
-    color: #1a1a1a;
-    font-weight: 700;
-}
-.mood_defiant .atmosphereLayer {
-    background: radial-gradient(
-        circle at 20% 80%,
-        rgba(200, 100, 100, 0.12) 0%,
-        transparent 50%
-    );
+    letter-spacing: -0.02em;
 }
 
 /* Powerful */
 .mood_powerful {
-    background: #f7f6f5;
+    background: white;
 }
 .mood_powerful .poemText {
-    color: #111;
-    font-weight: 800;
     font-size: var(--text-5xl);
-}
-.mood_powerful .atmosphereLayer {
-    background: linear-gradient(
-        45deg,
-        rgba(180, 120, 80, 0.1) 0%,
-        transparent 60%
-    );
+    letter-spacing: -0.03em;
 }
 
 /* Breaking */
 .mood_breaking {
-    background: #f2f2f2;
+    background: white;
 }
 .mood_breaking .poemText {
-    color: #555;
-    font-weight: 300;
-}
-.mood_breaking .atmosphereLayer {
-    background: radial-gradient(
-        circle at center,
-        rgba(120, 120, 120, 0.1) 0%,
-        transparent 70%
-    );
+    letter-spacing: 0.03em;
 }
 
 /* Void */
 .mood_void {
-    background: #f0f0f0;
+    background: white;
 }
 .mood_void .poemText {
-    color: #666;
-    font-weight: 200;
-    letter-spacing: 0.1em;
-}
-.mood_void .atmosphereLayer {
-    background: radial-gradient(
-        circle at center,
-        rgba(200, 200, 200, 0.15) 0%,
-        transparent 40%
-    );
+    letter-spacing: 0.15em;
 }
 
 /* Revelation */
 .mood_revelation {
-    background: #f8f8f7;
+    background: white;
 }
 .mood_revelation .poemText {
-    color: #222;
-    font-weight: 500;
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
-}
-.mood_revelation .atmosphereLayer {
-    background: radial-gradient(
-        circle at 50% 30%,
-        rgba(255, 240, 200, 0.15) 0%,
-        transparent 60%
-    );
+    letter-spacing: 0.01em;
 }
 
 /* Purpose */
 .mood_purpose {
-    background: #f9f8f6;
+    background: white;
 }
 .mood_purpose .poemText {
-    color: #111;
-    font-weight: 900;
     font-size: var(--text-6xl);
-    text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
-}
-.mood_purpose .atmosphereLayer {
-    background: radial-gradient(
-        circle at center,
-        rgba(255, 220, 150, 0.2) 0%,
-        transparent 50%
-    );
+    letter-spacing: -0.04em;
 }
 
 /* Truth */
 .mood_truth {
-    background: #faf9f8;
+    background: white;
 }
 .mood_truth .poemText {
-    color: #000;
-    font-weight: 700;
     font-size: var(--text-5xl);
+    letter-spacing: -0.03em;
 }
-.mood_truth .atmosphereLayer {
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.3) 0%,
-        transparent 80%
-    );
+
+/* Universal */
+.mood_universal {
+    background: white;
 }
+.mood_universal .poemText {
+    font-size: var(--text-4xl);
+    letter-spacing: -0.01em;
+}
+
+/* Connection */
+.mood_connection {
+    background: white;
+}
+.mood_connection .poemText {
+    font-size: var(--text-4xl);
+    letter-spacing: 0.005em;
+}
+
+/* THEMATIC WORD STYLING */
+
+/* Key words that define the poem's core themes */
+.keyWord {
+    letter-spacing: -0.01em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.keyWord:hover {
+    letter-spacing: -0.02em;
+}
+
+.emphasizedWord {
+    font-style: italic;
+    letter-spacing: 0.02em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.emphasizedWord:hover {
+    letter-spacing: 0.03em;
+}
+
+.criticalWord {
+    letter-spacing: 0.03em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.criticalWord:hover {
+}
+
+.emotionalWord {
+    letter-spacing: 0.01em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.emotionalWord:hover {
+}
+
+.metaphorWord {
+    position: relative;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.metaphorWord:hover {
+}
+
+.innerWord {
+    letter-spacing: -0.02em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.innerWord:hover {
+    letter-spacing: -0.03em;
+}
+
+.isolatedWord {
+    letter-spacing: 0.08em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.isolatedWord:hover {
+    letter-spacing: 0.12em;
+}
+
+.misunderstoodWord {
+    letter-spacing: 0.04em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.misunderstoodWord:hover {
+    letter-spacing: 0.06em;
+}
+
+.awareWord {
+    letter-spacing: -0.03em;
+    font-size: 1.1em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.awareWord:hover {
+    letter-spacing: -0.04em;
+}
+
+.brokenWord {
+    letter-spacing: 0.05em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.brokenWord:hover {
+    letter-spacing: 0.07em;
+}
+
+.performanceWord {
+    font-style: italic;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.performanceWord:hover {
+}
+
+.resistanceWord {
+    letter-spacing: -0.01em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.resistanceWord:hover {
+}
+
+.defiantWord {
+    letter-spacing: -0.02em;
+    font-size: 1.05em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.defiantWord:hover {
+    letter-spacing: -0.03em;
+    transform: scale(1.02);
+}
+
+.powerWord {
+    letter-spacing: -0.03em;
+    font-size: 1.1em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.powerWord:hover {
+    letter-spacing: -0.04em;
+    transform: scale(1.03);
+}
+
+.voidWord {
+    letter-spacing: 0.15em;
+    transition: all var(--duration-slow) var(--ease-smooth);
+    cursor: default;
+}
+
+.voidWord:hover {
+    letter-spacing: 0.2em;
+}
+
+.revelationWord {
+    letter-spacing: 0.01em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.revelationWord:hover {
+}
+
+.purposeWord {
+    letter-spacing: -0.04em;
+    font-size: 1.2em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.purposeWord:hover {
+    letter-spacing: -0.05em;
+    transform: scale(1.05);
+}
+
+.truthWord {
+    letter-spacing: -0.02em;
+    font-size: 1.05em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.truthWord:hover {
+    letter-spacing: -0.03em;
+}
+
+.universalWord {
+    letter-spacing: -0.01em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.universalWord:hover {
+}
+
+.connectionWord {
+    letter-spacing: 0.005em;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    cursor: default;
+}
+
+.connectionWord:hover {
+}
+
+/* TOUCH DEVICE OPTIMIZATION */
+@media (hover: none) {
+    .keyWord:hover,
+    .emphasizedWord:hover,
+    .criticalWord:hover,
+    .emotionalWord:hover,
+    .metaphorWord:hover,
+    .innerWord:hover,
+    .isolatedWord:hover,
+    .misunderstoodWord:hover,
+    .awareWord:hover,
+    .brokenWord:hover,
+    .performanceWord:hover,
+    .resistanceWord:hover,
+    .defiantWord:hover,
+    .powerWord:hover,
+    .voidWord:hover,
+    .revelationWord:hover,
+    .purposeWord:hover,
+    .truthWord:hover,
+    .universalWord:hover,
+    .connectionWord:hover {
+        /* Reset all hover effects on touch devices */
+        letter-spacing: inherit;
+        transform: none;
+    }
+}
+
+/* MOBILE TAP ZONES */
+.tapZoneLeft {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.tapZoneRight {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+/* Debug mode - uncomment to see tap zones */
+/*
+.tapZoneLeft {
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.tapZoneRight {
+    background: rgba(0, 255, 0, 0.1);
+}
+*/
 
 /* RESPONSIVE DESIGN */
 
@@ -1030,26 +1077,6 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-    .stickyHeader {
-        padding: var(--space-md) var(--space-lg);
-        flex-direction: column;
-        gap: var(--space-sm);
-    }
-
-    .progressContainer {
-        order: 3;
-        margin: 0;
-        max-width: 100%;
-    }
-
-    .sectionInfo {
-        order: 1;
-    }
-
-    .positionInfo {
-        order: 2;
-    }
-
     .poemText {
         font-size: var(--text-2xl);
         padding: 0 var(--space-lg);
@@ -1064,16 +1091,21 @@
     }
 
     .mood_truth .poemText {
-        font-size: var(--text-3xl);
+        font-size: var(--text-2xl);
+    }
+
+    /* Scale down word emphasis on mobile */
+    .awareWord,
+    .defiantWord,
+    .powerWord,
+    .purposeWord,
+    .truthWord {
+        font-size: 1em;
     }
 }
 
 /* Small mobile */
 @media (max-width: 480px) {
-    .stickyHeader {
-        padding: var(--space-sm) var(--space-md);
-    }
-
     .poemText {
         font-size: var(--text-xl);
         padding: 0 var(--space-md);
@@ -1126,15 +1158,9 @@
 }
 
 /* Performance optimizations for older browsers */
-@supports not (backdrop-filter: blur(10px)) {
-    .stickyHeader {
-        background: rgba(255, 255, 255, 0.98);
-    }
-}
 
 /* Print styles */
 @media print {
-    .stickyHeader,
     .atmosphereLayer {
         display: none;
     }

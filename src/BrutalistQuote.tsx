@@ -7,7 +7,6 @@ const BrutalistQuote: React.FC = () => {
       {/* Large geometric elements like in references */}
       <div className={styles.redBlock} />
       <div className={styles.blueCircle} />
-      <div className={styles.blackSquare} />
 
       {/* Side typography element */}
       <div className={styles.sideText}>

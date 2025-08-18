@@ -4,7 +4,7 @@ import styles from "./TechnicalPortfolioCTA.module.css";
 const TechnicalPortfolioCTA: React.FC = () => {
   const handleRedirect = () => {
     window.open(
-      "https://angelportfolio1.netlify.app",
+      "https://portafoliotechnicalangel.web.app/",
       "_blank",
       "noopener,noreferrer",
     );
@@ -19,7 +19,7 @@ const TechnicalPortfolioCTA: React.FC = () => {
       <div className={styles.whiteAccent} />
 
       {/* SECTION IDENTIFIER */}
-      <div className={styles.sectionNumber}>06</div>
+
       <div className={styles.sectionLabel}>TECHNICAL</div>
 
       {/* MAIN CONTENT */}
@@ -46,7 +46,7 @@ const TechnicalPortfolioCTA: React.FC = () => {
           <div className={styles.buttonArrow}>→</div>
         </button>
 
-        <div className={styles.linkText}>angelportfolio1.netlify.app</div>
+        <div className={styles.linkText}>portafoliotechnicalangel.web.app</div>
       </div>
 
       {/* SIDE ELEMENTS */}
@@ -59,7 +59,7 @@ const TechnicalPortfolioCTA: React.FC = () => {
       </div>
 
       <div className={styles.cornerInfo}>
-        SECTION 06 × TECHNICAL × PORTFOLIO × EXTERNAL LINK
+        TECHNICAL × PORTFOLIO × EXTERNAL LINK
       </div>
 
       {/* DECORATIVE ELEMENTS */}

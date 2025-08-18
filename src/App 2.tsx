@@ -4,7 +4,7 @@ import "./App.css";
 // Components
 import LoadingScreen from "./LoadingScreen";
 import SimpleCursor from "./SimpleCursor";
-
+import MusicPlayer from "./MusicPlayer";
 import AboutSection from "./AboutSection";
 import BrutalistQuote from "./BrutalistQuote";
 import FavoriteSection from "./FavoriteSection";
@@ -15,25 +15,18 @@ import TechnicalPortfolioCTA from "./TechnicalPortfolioCTA";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
-
+  const [isMusicPlayerVisible, setIsMusicPlayerVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
   // Handle loading completion
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
 
-  // Mobile detection
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768 || "ontouchstart" in window);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  // Handle music player toggle
+  const toggleMusicPlayer = () => {
+    setIsMusicPlayerVisible(!isMusicPlayerVisible);
+  };
 
   // Track scroll progress for Lynch-inspired effects
   useEffect(() => {
@@ -98,8 +91,14 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {/* Custom Cursor - Desktop Only */}
-      {!isMobile && <SimpleCursor />}
+      {/* Custom Cursor */}
+      <SimpleCursor />
+
+      {/* Music Player */}
+      <MusicPlayer
+        isVisible={isMusicPlayerVisible}
+        onToggle={toggleMusicPlayer}
+      />
 
       {/* Scroll Progress Indicator */}
       <div className="scroll-progress">
@@ -147,6 +146,9 @@ const App: React.FC = () => {
         {/* MOVIES IMPACT - The Abyss */}
         <MoviesImpactSection />
 
+        {/* TECHNICAL CTA - The Void */}
+        <TechnicalPortfolioCTA />
+
         {/* The Final Descent */}
         <section className="void-section">
           <div className="void-content">
@@ -157,10 +159,23 @@ const App: React.FC = () => {
             <div className="void-signature">— ANGEL</div>
           </div>
         </section>
-
-        {/* TECHNICAL CTA - The Void */}
-        <TechnicalPortfolioCTA />
       </main>
+
+      {/* Depth indicator */}
+      <div className="depth-indicator">
+        <div className="depth-text">
+          DEPTH: {Math.round(scrollProgress * 100)}%
+        </div>
+        <div className="depth-level">
+          {scrollProgress < 0.15 && "SURFACE"}
+          {scrollProgress >= 0.15 && scrollProgress < 0.3 && "SHADOWS"}
+          {scrollProgress >= 0.3 && scrollProgress < 0.45 && "TWIN PEAKS"}
+          {scrollProgress >= 0.45 && scrollProgress < 0.6 && "CHAVON"}
+          {scrollProgress >= 0.6 && scrollProgress < 0.75 && "ARTISTIC"}
+          {scrollProgress >= 0.75 && scrollProgress < 0.9 && "MOVIES"}
+          {scrollProgress >= 0.9 && "THE VOID"}
+        </div>
+      </div>
     </div>
   );
 };
